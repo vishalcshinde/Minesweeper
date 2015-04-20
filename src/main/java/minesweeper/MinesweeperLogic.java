@@ -8,14 +8,12 @@ class MinesweeperLogic {
 			new CheckMineDown(), new CheckMineUp() };
 	Set<Position> positions = new HashSet<Position>();
 
-	int getMineCount(int row, int col, String[][] input, int[][] output) {
-		int count = 0;
+	int getMineCount(int row, int col, String[][] input) {
 		positions.clear();
 		for (CheckMine checkMine : checkMines) {
 			positions.addAll(checkMine.getMinePositions(row, col, input));
 		}
-		output[row][col] = positions.size();
-		return count;
+		return positions.size();
 	}
 
 }

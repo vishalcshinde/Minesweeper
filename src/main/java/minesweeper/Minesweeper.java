@@ -26,8 +26,9 @@ public class Minesweeper {
 		MinesweeperLogic logic = new MinesweeperLogic();
 		for (int row = 0; row < input.length; row++) {
 			for (int col = 0; col < input[row].length; col++) {
-				if (!input[row][col].equals("*"))
-					logic.getMineCount(row, col, input, output);
+				if (!input[row][col].equals("*")) {
+					output[row][col] = logic.getMineCount(row, col, input);
+				}
 
 			}
 		}
