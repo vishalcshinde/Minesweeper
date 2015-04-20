@@ -9,10 +9,12 @@ adjacent to that square. Each square has at most eight adjacent squares. The 4×
 on the left contains two mines, each represented by a “*” character. If we represent the
 same field by the hint numbers described above, we end up with the field on the right:
 
-'*...          *100
+```
+*...          *100
 ....          2210    
 .*..          1*10
-....          1110'
+....          1110 
+```
 
 ##Input
 Number of rows and columns
