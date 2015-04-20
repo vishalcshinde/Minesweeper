@@ -22,34 +22,24 @@ public class Minesweeper {
 			input[rRow][rCol] = "*";
 		}
 		random.nextInt(rows);
-		int[][] output = new int[input.length][input[0].length];
 		MinesweeperLogic logic = new MinesweeperLogic();
-		for (int row = 0; row < input.length; row++) {
-			for (int col = 0; col < input[row].length; col++) {
-				if (!input[row][col].equals("*")) {
-					output[row][col] = logic.getMineCount(row, col, input);
-				}
-
-			}
-		}
 		for (int i = 0; i < input.length; i++) {
 			System.out.println();
 			for (int j = 0; j < input[0].length; j++) {
-
 				System.out.print(input[i][j]);
 			}
 		}
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		for (int i = 0; i < input.length; i++) {
+		System.out.println("\n\n\n");
+		for (int row = 0; row < input.length; row++) {
 			System.out.println();
-			for (int j = 0; j < input[0].length; j++) {
-				if (input[i][j].equals("*")) {
-					System.out.print("*");
+			for (int col = 0; col < input[row].length; col++) {
+				if (!input[row][col].equals("*")) {
+					System.out.print(logic.getMineCount(row, col, input));
 				} else {
-					System.out.print(output[i][j]);
+					System.out.print("*");
 				}
+				
+
 			}
 		}
 	}
