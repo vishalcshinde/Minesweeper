@@ -4,18 +4,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 class CheckMineDown implements CheckMine {
-	public Set<Position> getMinePositions(int row, int col, String[][] matricol) {
+	public Set<Position> getMinePositions(int row, int col, String[][] matrix) {
 		Set<Position> positions = new HashSet<Position>();
 		col = col - 1;
 		row = row + 1;
-		if (row >= matricol.length) {
+		if (row >= matrix.length) {
 			return positions;
 		}
 		if (col < 0) {
 			col = 0;
 		}
-		for (int i = col; i < col + 2 && i < matricol[0].length; i++) {
-			if (matricol[row][i].equals("*")) {
+		for (int i = col; i < col + 2 && i < matrix[0].length; i++) {
+			if (matrix[row][i].equals("*")) {
 				positions.add(new Position(i, row));
 			}
 		}
